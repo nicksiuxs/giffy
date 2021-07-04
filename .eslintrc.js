@@ -30,5 +30,6 @@ module.exports = {
 		semi: ["error", "always"],
 		"react/react-in-jsx-scope": RULES.OFF,
 		"react/prop-types": RULES.OFF,
+		"no-unused-vars": RULES.WARN,
 	},
 };
