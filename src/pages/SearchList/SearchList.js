@@ -4,12 +4,15 @@ import Gif from 'src/components/Gif/Gif';
 
 import getGifs from 'src/services/getGifs.js';
 
-import './ListOfGifs.css';
+import './SearchList.css';
 
-const ListOfGifs = ({ params }) => {
+const SearchList = ({ params }) => {
 	const { keyword } = params;
 
 	const [gifs, setGifs] = useState([]);
+
+	const [loader, setLoader] = useState(false);
+
 	useEffect(() => {
 		getGifs({ keyword }).then((res) => setGifs(res));
 	}, [keyword]);
@@ -23,4 +26,4 @@ const ListOfGifs = ({ params }) => {
 	);
 };
 
-export default ListOfGifs;
+export default SearchList;
