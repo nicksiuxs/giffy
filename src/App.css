@@ -6,3 +6,9 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.logo a {
+	text-decoration: none;
+	color: white;
+	font-size: 4rem;
+}
