@@ -6,13 +6,14 @@ import getGifs from 'src/services/getGifs.js';
 
 import './ListOfGifs.css';
 
-const ListOfGifs = () => {
-	const keyword = 'foxes';
+const ListOfGifs = ({ params }) => {
+	const { keyword } = params;
 
 	const [gifs, setGifs] = useState([]);
 	useEffect(() => {
 		getGifs({ keyword }).then((res) => setGifs(res));
 	}, [keyword]);
+
 	return (
 		<div className="list-gifs">
 			{gifs.map(({ id, title, url }) => (
