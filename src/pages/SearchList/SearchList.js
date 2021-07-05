@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Gif from 'src/components/Gif/Gif';
+import Loader from 'src/components/Loader/Loader';
 
 import getGifs from 'src/services/getGifs.js';
 
@@ -11,18 +12,28 @@ const SearchList = ({ params }) => {
 
 	const [gifs, setGifs] = useState([]);
 
-	const [loader, setLoader] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		getGifs({ keyword }).then((res) => setGifs(res));
+		setLoading(true);
+		getGifs({ keyword }).then((res) => {
+			setGifs(res);
+			setLoading(false);
+		});
 	}, [keyword]);
 
 	return (
-		<div className="list-gifs">
-			{gifs.map(({ id, title, url }) => (
-				<Gif key={id} title={title} id={id} url={url} />
-			))}
-		</div>
+		<>
+			{loading ? (
+				<Loader />
+			) : (
+				<div className="list-gifs">
+					{gifs.map(({ id, title, url }) => (
+						<Gif key={id} title={title} id={id} url={url} />
+					))}
+				</div>
+			)}
+		</>
 	);
 };
 
