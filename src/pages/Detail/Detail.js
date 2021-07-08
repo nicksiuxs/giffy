@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import GifsContext from 'src/context/GifsContext';
 
 import './Detail.css';
 
 const Detail = ({ params }) => {
-	console.log(params);
+	const context = useContext(GifsContext);
+	console.log(context);
 	return <div className="detail">detalle</div>;
 };
 

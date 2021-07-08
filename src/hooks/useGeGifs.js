@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import getGifs from 'src/services/getGifs.js';
+import GifsContext from 'src/context/GifsContext';
 
 export default function useGetGifs({ keyword } = { keyword: null }) {
-	const [gifs, setGifs] = useState([]);
+	const { gifs, setGifs } = useContext(GifsContext);
 
 	const [loading, setLoading] = useState(true);
 
