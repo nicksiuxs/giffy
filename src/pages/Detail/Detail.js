@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import GifsContext from 'src/context/GifsContext';
+import React from 'react';
+import useGlobalGifs from 'src/hooks/useGlobalGif';
 
 import './Detail.css';
 
 const Detail = ({ params }) => {
-	const context = useContext(GifsContext);
-	console.log(context);
+	const gifs = useGlobalGifs();
+	console.log(gifs);
 	return <div className="detail">detalle</div>;
 };
 
