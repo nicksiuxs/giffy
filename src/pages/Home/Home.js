@@ -12,9 +12,9 @@ const POPULAR_GIFS = ['Pandas', 'Colombia', 'Argentina'];
 const Home = () => {
 	const [keyword, setKeyword] = useState('');
 
-	const [path, pushLocation] = useLocation();
+	const [pushLocation] = useLocation();
 
-	const { loading, gifs } = useGetGifs();
+	const { gifs } = useGetGifs();
 
 	const handleSubmit = (e) => {
 		// Navegar a otro lado
