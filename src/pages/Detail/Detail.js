@@ -5,8 +5,15 @@ import './Detail.css';
 
 const Detail = ({ params }) => {
 	const gifs = useGlobalGifs();
-	console.log(gifs);
-	return <div className="detail">detalle</div>;
+
+	const gif = gifs.find((singleGif) => singleGif.id === params.id);
+
+	return (
+		<div className="detail">
+			<img src={gif.url} />
+			<h2>{gif.title}</h2>
+		</div>
+	);
 };
 
 export default Detail;
