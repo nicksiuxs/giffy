@@ -1,22 +1,29 @@
 .category h2 {
-	font-size: 3rem;
+	font-size: 48px;
 	color: white;
 	text-align: left;
+	margin: 0;
 }
 
 .category ul {
 	list-style: none;
 	padding: 0;
+	margin: 0;
+	padding-top: 6px;
 }
 
 .category li {
-	margin-bottom: 1rem;
+	margin-bottom: 10px;
 	text-align: left;
 }
 
 .category li a {
 	color: white;
 	text-decoration: none;
-	font-size: 2rem;
+	font-size: 1rem;
 	text-align: left;
+}
+
+.category li a:hover {
+	color: violet;
 }
