@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'wouter';
+import { useLocation } from 'wouter';
 
 import ListOfGifs from 'src/components/ListOfGifs/ListOfGifs';
 
 import useGetGifs from 'src/hooks/useGeGifs';
 
 import './Home.css';
-
-const POPULAR_GIFS = ['Pandas', 'Colombia', 'Argentina'];
+import TrendingSearches from 'src/components/TrendingSearches/TrendingSearches';
 
 const Home = () => {
 	const [keyword, setKeyword] = useState('');
@@ -36,18 +35,15 @@ const Home = () => {
 					value={keyword}
 				/>
 			</form>
-			<h2>Última búsqueda</h2>
-			<ListOfGifs gifs={gifs} />
-			<h2>Los gifs más populares</h2>
-			<ul>
-				{POPULAR_GIFS.map((route, key) => {
-					return (
-						<li key={key}>
-							<Link to={'/search/' + route}>GIF de {route}</Link>
-						</li>
-					);
-				})}
-			</ul>
+			<main>
+				<section className="gifs__content">
+					<h2>Última búsqueda</h2>
+					<ListOfGifs gifs={gifs} />
+				</section>
+				<aside className="aside">
+					<TrendingSearches />
+				</aside>
+			</main>
 		</div>
 	);
 };
