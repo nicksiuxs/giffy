@@ -36,13 +36,13 @@ const Home = () => {
 				/>
 			</form>
 			<main>
+				<aside className="aside">
+					<TrendingSearches />
+				</aside>
 				<section className="gifs__content">
 					<h2>Última búsqueda</h2>
 					<ListOfGifs gifs={gifs} />
 				</section>
-				<aside className="aside">
-					<TrendingSearches />
-				</aside>
 			</main>
 		</div>
 	);

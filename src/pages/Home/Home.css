@@ -7,7 +7,7 @@
 
 main {
 	display: grid;
-	grid-template-columns: 1fr 20%;
+	grid-template-columns: 20% 1fr;
 }
 
 .gifs__content h2 {
