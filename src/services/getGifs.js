@@ -1,4 +1,4 @@
-const { REACT_APP_API_KEY } = process.env;
+import { API_KEY, API_URL } from './settings';
 
 const fromApiResponseToGifs = (apiResponse) => {
 	const { data = [] } = apiResponse;
@@ -16,7 +16,7 @@ const fromApiResponseToGifs = (apiResponse) => {
 };
 
 export default function getGifs({ keyword = 'Morty' } = {}) {
-	const urlAPI = `https://api.giphy.com/v1/gifs/search?api_key=${REACT_APP_API_KEY}&q=${keyword}&limit=25&offset=0&rating=g&lang=en"`;
+	const urlAPI = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=25&offset=0&rating=g&lang=en"`;
 	return fetch(urlAPI)
 		.then((res) => res.json())
 		.then(fromApiResponseToGifs);
