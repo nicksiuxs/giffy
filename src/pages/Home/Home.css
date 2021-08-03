@@ -7,10 +7,15 @@
 
 main {
 	display: grid;
-	grid-template-columns: 20% 1fr;
 }
 
 .gifs__content h2 {
 	margin: 0;
 	font-size: 48px;
+}
+
+@media (min-width: 768px) {
+	main {
+		grid-template-columns: 20% 1fr;
+	}
 }

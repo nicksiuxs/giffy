@@ -6,7 +6,7 @@ import ListOfGifs from 'src/components/ListOfGifs/ListOfGifs';
 import useGetGifs from 'src/hooks/useGeGifs';
 
 import './Home.css';
-import TrendingSearches from 'src/components/TrendingSearches/TrendingSearches';
+import LazyTrending from 'src/components/TrendingSearches/TrendingSearches';
 
 const Home = () => {
 	const [keyword, setKeyword] = useState('');
@@ -36,13 +36,13 @@ const Home = () => {
 				/>
 			</form>
 			<main>
-				<aside className="aside">
-					<TrendingSearches />
-				</aside>
 				<section className="gifs__content">
 					<h2>Última búsqueda</h2>
 					<ListOfGifs gifs={gifs} />
 				</section>
+				<aside className="aside">
+					<LazyTrending />
+				</aside>
 			</main>
 		</div>
 	);
